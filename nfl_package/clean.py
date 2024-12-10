@@ -18,6 +18,7 @@ def clean_offense_data(df):
                   'rushing_yds/attempt', 'rushing_tds', 'fgm', 'fga', 'xpm', 
                   'xpa', 'times_punted', 'total_punt_yds', '3dconv', '3dattempt',
                    '4dconv', '4datt', 'off_top', 'year', 'home_or_away']
+    df['off_top'] = [int(minutes) + (int(seconds) / 60) for minutes, seconds in (time.split(":") for time in df['off_top'])]
     return df
 
 def save_cleaned_data(df, output_path):
