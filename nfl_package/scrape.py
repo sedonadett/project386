@@ -1,8 +1,7 @@
-import pandas as pd
-
 """
 This module scrapes tables from pro-football-reference.com.
 """
+import pandas as pd
 if __name__ == '__main__':
     def get_offensive_game_stats_with_playoffs(base_url, years):
         """Scrapes the offensive tables for the specified years and combines with the playoff tables.

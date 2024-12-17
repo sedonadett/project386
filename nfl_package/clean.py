@@ -1,9 +1,10 @@
-import pandas as pd
+
 """
 This module take the scraped data and tidies the dataframe.
 It adds a home_away column to identify if a game was played at home or not.
 It tidies the columns and adds proper column names.
 """
+import pandas as pd
 if __name__ == '__main__':
     def load_data(file_path):
         """Loads the dataset from the given file path.
