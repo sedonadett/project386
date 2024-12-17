@@ -10,8 +10,43 @@ Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 documentation for details.
 
+This is the documentation for the `nfl_package` project. Below, you'll find details about the main modules: `analysis`, `clean`, and `scrape`.
+
+Contents:
+---------
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Modules:
+
+   analysis
+   clean
+   scrape
+
+Module Documentation
+=====================
+
+analysis.py
+-----------
+
+.. automodule:: nfl_package.analysis
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+clean.py
+--------
+
+.. automodule:: nfl_package.clean
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+scrape.py
+---------
+
+.. automodule:: nfl_package.scrape
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
