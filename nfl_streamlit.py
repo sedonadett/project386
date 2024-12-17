@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from nfl_package.analysis import top_boxplot 
 
 
 df = pd.read_csv('nfl_package/datasets/kc_offensive_game_stats_cleaned.csv')
