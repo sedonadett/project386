@@ -4,4 +4,4 @@ matplotlib
 setuptools
 seaborn
 plotly.express
-sklearn
+scikit-learn
