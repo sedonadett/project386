@@ -67,12 +67,12 @@ import numpy as np
 
 # Boxplot
 def top_boxplot(df):
+    df['win_loss_binary'] = [1 if x == 'W' else 0 for x in df['win_loss']]
     win_data = df[df['win_loss_binary'] == 1]['off_top']
     loss_data = df[df['win_loss_binary'] == 0]['off_top']
     data = [win_data, loss_data]
     
-    fig = plt.figure(figsize =(10, 7))
-    ax = fig.add_axes([0, 0, 1, 1])
+    fig, ax = plt.subplots(figsize =(10, 7))
     
     bp = ax.boxplot(data, patch_artist=True, labels=['Wins', 'Losses'])
     ax.set_title('Boxplot of Time of Possession for Wins and Losses')
@@ -88,6 +88,6 @@ def top_boxplot(df):
         jittered_x = np.random.normal(pos, 0.025, size=len(dataset))
         ax.scatter(jittered_x, dataset, alpha=0.6, color=color)
 
-    plt.show()
+    return fig
 
 top_boxplot(df)
