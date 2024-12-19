@@ -1,13 +1,18 @@
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn import linear_model
-import plotly.express as px
-
-df = pd.read_csv("nfl_package\datasets\kc_offensive_game_stats_cleaned.csv") 
 
 def make_corr_matrix(df):
+    """
+    This function makes a correlation matrix.
+
+    Parameters: 
+    dataframe: the data you want to get correlations for.
+
+    Returns:
+    corr_matrix: the correlation matrix.
+    
+    """
     df['win_loss_binary'] = [1 if x == 'W' else 0 for x in df['win_loss']]
     columns_to_drop = ['week', 'day', 'date', 'win_loss', 'OT', 'opp', 'year', 'home_or_away']
     df_temp = df.drop(columns=columns_to_drop, axis=1)
@@ -15,7 +20,16 @@ def make_corr_matrix(df):
     return corr_matrix
 
 
-def win_correlations(corr_matrix):
+def win_correlations(corr_matrix, df):
+    """
+    This function gets the top 5 variables correlated with wins and prints the descriptive statistics.
+
+    Parameters:
+    corr_matrix: the correlation matrix produced from make_corr_matrix.
+
+    Returns:
+    mat: the matrix of highly correlated variables with wins.
+    """
     mat = corr_matrix['win_loss_binary'].sort_values(ascending=False)
     print("Correlation with Win/Loss (top 5):")
     print(mat[1:6])
@@ -25,8 +39,16 @@ def win_correlations(corr_matrix):
     return mat
 
 
+def score_correlations(corr_matrix, df):
+    """
+    This function gets the top 5 variables correlated with points scored and prints the descriptive statistics.
 
-def score_correlations(corr_matrix):
+    Parameters:
+    corr_matrix: the correlation matrix produced from make_corr_matrix.
+
+    Returns:
+    mat: the matrix of highly correlated variables with points scored.
+    """
     mat = corr_matrix['pts_scored'].sort_values(ascending=False)
     print("Correlation with Points Scored (top 5):")
     print(mat[1:6])
@@ -36,37 +58,16 @@ def score_correlations(corr_matrix):
     return mat
 
 
-kc_mat = make_corr_matrix(df)
-win_correlations(kc_mat)
-score_correlations(kc_mat)
-
-
-def generate_top5_plots(df, win_correlations):
-    top_5_vars = win_correlations[1:6].index
-    grouped_stats = df.groupby('win_loss_binary')[top_5_vars].describe()
-    plots = []
-    for var in top_5_vars:
-        fig, ax = plt.subplots()
-        sns.boxplot(x='win_loss_binary', y=var, data=df, ax=ax)
-        ax.set_title(f"{var} by Win/Loss")
-        ax.set_xlabel("Game Result")
-        ax.set_ylabel(f"{var}")
-        plots.append(fig)
-    
-    return grouped_stats, plots
-
-
-#plt.figure(figsize=(25, 20))
-#sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f")
-#plt.title('Correlation Matrix Heatmap')
-#plt.show()
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-
-# Boxplot
 def top_boxplot(df):
+    """
+    This function created boxplots of the distribution of total time of possession for each game and whether it was a win or loss.
+
+    Parameters:
+    df: the dataframe to be plotted.
+
+    Returns:
+    fig: the figure to be plotted.
+    """
     df['win_loss_binary'] = [1 if x == 'W' else 0 for x in df['win_loss']]
     win_data = df[df['win_loss_binary'] == 1]['off_top']
     loss_data = df[df['win_loss_binary'] == 0]['off_top']
@@ -89,5 +90,3 @@ def top_boxplot(df):
         ax.scatter(jittered_x, dataset, alpha=0.6, color=color)
 
     return fig
-
-top_boxplot(df)
