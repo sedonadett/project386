@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NFL Analysis documentation &#8212; NFL Analysis 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="analysis module" href="analysis.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="nfl-analysis-documentation">
+<h1>NFL Analysis documentation<a class="headerlink" href="#nfl-analysis-documentation" title="Link to this heading">¶</a></h1>
+<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
+documentation for details.</p>
+<p>This is the documentation for the <cite>nfl_package</cite> project. Below, you’ll find details about the main modules: <cite>analysis</cite>, <cite>clean</cite>, and <cite>scrape</cite>.</p>
+<section id="contents">
+<h2>Contents:<a class="headerlink" href="#contents" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">analysis module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#nfl_package.analysis.make_corr_matrix"><code class="docutils literal notranslate"><span class="pre">make_corr_matrix()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#nfl_package.analysis.score_correlations"><code class="docutils literal notranslate"><span class="pre">score_correlations()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#nfl_package.analysis.top_boxplot"><code class="docutils literal notranslate"><span class="pre">top_boxplot()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#nfl_package.analysis.win_correlations"><code class="docutils literal notranslate"><span class="pre">win_correlations()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clean.html">clean module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clean.html#nfl_package.clean.clean_offense_data"><code class="docutils literal notranslate"><span class="pre">clean_offense_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clean.html#nfl_package.clean.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clean.html#nfl_package.clean.save_cleaned_data"><code class="docutils literal notranslate"><span class="pre">save_cleaned_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scrape.html">scrape module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scrape.html#nfl_package.scrape.get_offensive_game_stats_no_playoffs"><code class="docutils literal notranslate"><span class="pre">get_offensive_game_stats_no_playoffs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="scrape.html#nfl_package.scrape.get_offensive_game_stats_with_playoffs"><code class="docutils literal notranslate"><span class="pre">get_offensive_game_stats_with_playoffs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="scrape.html#nfl_package.scrape.get_opp_game_stats_no_playoffs"><code class="docutils literal notranslate"><span class="pre">get_opp_game_stats_no_playoffs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="scrape.html#nfl_package.scrape.get_opp_game_stats_with_playoffs"><code class="docutils literal notranslate"><span class="pre">get_opp_game_stats_with_playoffs()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="module-documentation">
+<h1>Module Documentation<a class="headerlink" href="#module-documentation" title="Link to this heading">¶</a></h1>
+<section id="module-nfl_package.analysis">
+<span id="analysis-py"></span><h2>analysis.py<a class="headerlink" href="#module-nfl_package.analysis" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.analysis.make_corr_matrix">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.analysis.</span></span><span class="sig-name descname"><span class="pre">make_corr_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/analysis.html#make_corr_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.analysis.make_corr_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>This function makes a correlation matrix.</p>
+<p>Parameters:
+dataframe: the data you want to get correlations for.</p>
+<p>Returns:
+corr_matrix: the correlation matrix.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.analysis.score_correlations">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.analysis.</span></span><span class="sig-name descname"><span class="pre">score_correlations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">corr_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/analysis.html#score_correlations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.analysis.score_correlations" title="Link to this definition">¶</a></dt>
+<dd><p>This function gets the top 5 variables correlated with points scored and prints the descriptive statistics.</p>
+<p>Parameters:
+corr_matrix: the correlation matrix produced from make_corr_matrix.</p>
+<p>Returns:
+mat: the matrix of highly correlated variables with points scored.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.analysis.top_boxplot">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.analysis.</span></span><span class="sig-name descname"><span class="pre">top_boxplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/analysis.html#top_boxplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.analysis.top_boxplot" title="Link to this definition">¶</a></dt>
+<dd><p>This function created boxplots of the distribution of total time of possession for each game and whether it was a win or loss.</p>
+<p>Parameters:
+df: the dataframe to be plotted.</p>
+<p>Returns:
+fig: the figure to be plotted.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.analysis.win_correlations">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.analysis.</span></span><span class="sig-name descname"><span class="pre">win_correlations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">corr_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/analysis.html#win_correlations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.analysis.win_correlations" title="Link to this definition">¶</a></dt>
+<dd><p>This function gets the top 5 variables correlated with wins and prints the descriptive statistics.</p>
+<p>Parameters:
+corr_matrix: the correlation matrix produced from make_corr_matrix.</p>
+<p>Returns:
+mat: the matrix of highly correlated variables with wins.</p>
+</dd></dl>
+
+</section>
+<section id="module-nfl_package.clean">
+<span id="clean-py"></span><h2>clean.py<a class="headerlink" href="#module-nfl_package.clean" title="Link to this heading">¶</a></h2>
+<p>This module take the scraped data and tidies the dataframe.
+It adds a home_away column to identify if a game was played at home or not.
+It tidies the columns and adds proper column names.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.clean.clean_offense_data">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.clean.</span></span><span class="sig-name descname"><span class="pre">clean_offense_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/clean.html#clean_offense_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.clean.clean_offense_data" title="Link to this definition">¶</a></dt>
+<dd><p>Cleans the offensive dataset.</p>
+<p>Parameters:
+df: The dataset to be cleaned.</p>
+<p>Returns:
+df: The cleaned df.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.clean.load_data">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.clean.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/clean.html#load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.clean.load_data" title="Link to this definition">¶</a></dt>
+<dd><p>Loads the dataset from the given file path.</p>
+<p>Parameters:
+file_path (str): The file path of the dataset.</p>
+<p>Returns:
+df: The dataset as a Pandas dataframe.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.clean.save_cleaned_data">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.clean.</span></span><span class="sig-name descname"><span class="pre">save_cleaned_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/clean.html#save_cleaned_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.clean.save_cleaned_data" title="Link to this definition">¶</a></dt>
+<dd><p>Saves the cleaned dataset to the specified output path.</p>
+<p>Parameters:
+df: The dataframe to save.
+output_path (str): The path to save the dataframe in.</p>
+<p>Returns:
+df (csv): The dataframe as a csv file in the specified output path.</p>
+</dd></dl>
+
+</section>
+<section id="module-nfl_package.scrape">
+<span id="scrape-py"></span><h2>scrape.py<a class="headerlink" href="#module-nfl_package.scrape" title="Link to this heading">¶</a></h2>
+<p>This module scrapes tables from pro-football-reference.com.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.scrape.get_offensive_game_stats_no_playoffs">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.scrape.</span></span><span class="sig-name descname"><span class="pre">get_offensive_game_stats_no_playoffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">years</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/scrape.html#get_offensive_game_stats_no_playoffs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.scrape.get_offensive_game_stats_no_playoffs" title="Link to this definition">¶</a></dt>
+<dd><p>Scrapes the offensive tables for the specified years.</p>
+<p>Parameters:
+base_url (str): the url to scrape from.
+years (list of int): list of integers of years where the team did not play in the playoffs.</p>
+<p>Returns:
+dataframe: The combined offensive data from years the team did not play in the playoffs.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.scrape.get_offensive_game_stats_with_playoffs">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.scrape.</span></span><span class="sig-name descname"><span class="pre">get_offensive_game_stats_with_playoffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">years</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/scrape.html#get_offensive_game_stats_with_playoffs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.scrape.get_offensive_game_stats_with_playoffs" title="Link to this definition">¶</a></dt>
+<dd><p>Scrapes the offensive tables for the specified years and combines with the playoff tables.</p>
+<p>Parameters:
+base_url (str): the url to scrape from.
+years (list of int): list of integers of years where the team played in the playoffs.</p>
+<p>Returns:
+dataframe: The combined offensive data from years the team played in the playoffs.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.scrape.get_opp_game_stats_no_playoffs">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.scrape.</span></span><span class="sig-name descname"><span class="pre">get_opp_game_stats_no_playoffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">years</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/scrape.html#get_opp_game_stats_no_playoffs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.scrape.get_opp_game_stats_no_playoffs" title="Link to this definition">¶</a></dt>
+<dd><p>Scrapes the opponent’s offensive tables for the specified years.</p>
+<p>Parameters:
+base_url (str): the url to scrape from.
+years (list of int): list of integers of years where the team did not play in the playoffs.</p>
+<p>Returns:
+dataframe: The combined offensive data from years the team did not play in the playoffs.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nfl_package.scrape.get_opp_game_stats_with_playoffs">
+<span class="sig-prename descclassname"><span class="pre">nfl_package.scrape.</span></span><span class="sig-name descname"><span class="pre">get_opp_game_stats_with_playoffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">years</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nfl_package/scrape.html#get_opp_game_stats_with_playoffs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nfl_package.scrape.get_opp_game_stats_with_playoffs" title="Link to this definition">¶</a></dt>
+<dd><p>Scrapes the offensive tables for the specified years of the opponent and combines with the playoff tables.</p>
+<p>Parameters:
+base_url (str): the url to scrape from.
+years (list of int): list of integers of years where the team played in the playoffs.</p>
+<p>Returns:
+dataframe: The combined offensive data from years the team played in the playoffs.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">NFL Analysis</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">analysis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clean.html">clean module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrape.html">scrape module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="analysis.html" title="next chapter">analysis module</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Sedona Dettwiler and Ethan Beckstead.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
